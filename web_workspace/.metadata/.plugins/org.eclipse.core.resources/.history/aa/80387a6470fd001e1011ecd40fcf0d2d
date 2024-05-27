@@ -1,0 +1,16 @@
+package testJCG;
+
+public class TestJCG {
+	static int a =1;
+	public static void main(String[] args) {
+		addA();
+		addA();
+
+	}
+	
+	public static void addA() {
+		a = a+1;
+		System.out.println(a+"\n");
+	}
+
+}

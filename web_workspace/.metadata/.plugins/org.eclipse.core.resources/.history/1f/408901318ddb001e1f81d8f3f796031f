@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type= "text/javascript" src="/testq/resources/js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+	<div>
+		<input type="file">
+		<input type="button" value="추가" onclick="addFile()">
+		<input type="button" value="추가" onclick="delFile()">
+	</div>
+</body>
+</html>

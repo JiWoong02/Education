@@ -1,0 +1,22 @@
+package test.udp.server;
+
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+
+public class UDPServer {
+
+	public static void main(String[] args) throws Exception {
+		// UDP 통신을 사용하는 서버측 프로그램
+		int port = 5555;
+		
+		DatagramSocket server = new DatagramSocket();
+		// 메세지를 받을 클라이언트 측 ip 주소 필요함
+		InetAddress client = InetAddress.getByName("127.0.0.1");
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package test.synch;
+
+public class AccountManager {
+
+}

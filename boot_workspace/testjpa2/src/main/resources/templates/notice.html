@@ -1,0 +1,518 @@
+<!DOCTYPE  xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>testjpa2</title>
+    <style type="text/css">
+        table#toplist td {
+            text-align: center;
+        }
+        div#inputarea {
+            width: 500px;
+            border: 1px solid darkred;
+            margin-left: 450px;
+        }
+
+        fieldset#ss {
+            width: 600px;
+            position: relative;
+            left: 450px;
+        }
+        div fieldset {
+            width: 600px;
+        }
+        div.sfield {
+            background: lightgray;
+            width: 630px;
+            position: relative;
+            left: 400px;
+            display: none;  /* 안 보이게 함 */
+        }
+    </style>
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+
+            //최근 등록된 공지글 상위 3개 조회 출력 처리 **************************************
+            $.ajax({
+                url: "/notices/ntop3",
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json; charset=UTF-8",
+                success: function(data){
+                    console.log("success : " + data);
+
+                    //object --> string
+                    var str = JSON.stringify(data);
+                    console.log(str)
+
+                    //string --> json
+                    var json = JSON.parse(str);
+                    console.log(json)
+
+                    values = "";
+                    for(var i in json){
+                        values += "<tr><td>" + json[i].noticeNo
+                            + "</td><td><a href='#'  onclick='fn_detail(" + json[i].noticeNo + ");' >"
+                            + json[i].noticeTitle   + "</a></td><td>"
+                            + json[i].noticeDate + "</td></tr>";
+                    }
+
+                    $('#toplist').html($('#toplist').html() + values);
+                    //$('#toplist').append(values);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    console.log("error : " + jqXHR + ", " + textStatus + ", " + errorThrown);
+                }
+            });  //ajax  --------------------------------------------------------------------------------------
+
+            //등록 버튼 클릭시 ***********************************************************************
+            $('#resetBtn').on('click', function(){
+                $('#no').val("");
+                $('#ntitle').val("");
+                $('#nwriter').val("");
+                $('#ncontent').val("");
+                $('#rcount').val("");
+                $('#ndate').val("");
+                $('#nfile').val("");
+                //페이지 새로고침 강제 처리
+                window.location.reload(true);
+            });  //리셋버튼 클릭시  -----------------------------------------------------------------------
+
+            //등록 버튼 클릭하면, input 의 값들을 읽어와서, json 객체 만들어서 서버로 요청 보내기
+            $('#registerBtn').on('click', function(){
+                //값을 입력받은 input 태그에 접근
+                var inputBtitle = $('#ntitle');
+                var inputBwriter = $('#nwriter');
+                var inputBcontent = $('#ncontent')
+
+                //각 input 태그에 기록된 값 추출
+                var titleVal = inputBtitle.val();
+                var writerVal = inputBwriter.val();
+                var contentVal = inputBcontent.val();
+
+                //전송할 json 객체 만들기
+                var noticeObject = {
+                    noticeTitle: titleVal,
+                    noticeWriter: writerVal,
+                    noticeContent: contentVal
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "/notices",
+                    data: JSON.stringify(noticeObject),
+                    contentType: "application/json; charset=UTF-8",
+                    success: function(){
+                        alert('Created');
+                        //페이지 새로고침 강제 처리
+                        window.location.reload(true);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                        console.log("error : " + jqXHR + ", " + textStatus + ", " + errorThrown);
+                    }
+                });  //글등록 ajax
+            });   //click  등록버튼  -------------------------------------------
+
+            //삭제 버튼 클릭하면, input 의 값들을 읽어와서, json 객체 만들어서 서버로 요청 보내기
+            $('#deleteBtn').on('click', function (){
+                var noticeNoValue = $('#no').val();
+
+                $.ajax({
+                    type: "DELETE",
+                    url: "/notices/" + noticeNoValue,
+                    contentType: "application/json; charset=UTF-8",
+                    success: function (){
+                        alert("Deleted");
+                        window.location.reload(true);  //새로고침
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                        console.log("error : " + jqXHR + ", " + textStatus + ", " + errorThrown);
+                    }
+                });  //글삭제 ajax
+            });  //삭제 버튼 클릭 -----------------------------------
+
+            //수정 버튼 클릭하면, input 의 값들을 읽어와서, json 객체 만들어서 서버로 요청 보내기
+            $('#modifyBtn').on('click', function (){
+                //각 input 태그에 기록된 값 추출
+                var titleVal = $('#ntitle').val();
+                var contentVal = $('#ncontent').val();
+                var noValue = $('#no').val();
+
+                //전송할 json 객체 만들기
+                var noticeObject = {
+                    noticeNo: noValue,
+                    noticeTitle: titleVal,
+                    noticeContent: contentVal
+                };
+
+                $.ajax({
+                    type: "PUT",
+                    url: "/notices/" + noticeNoVal,   //put 전송시에는 반드시 url 뒤에  pathVariable 이 필요함
+                    //pathvariable 에 대한 값이 없으면, 자동 post 로 전송이 감
+                    data: JSON.stringify(noticeObject),
+                    contentType: "application/json; charset=UTF-8",
+                    success: function (){
+                        alert("Modified");
+                        window.location.reload(true);  //새로고침
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                        console.log("error : " + jqXHR + ", " + textStatus + ", " + errorThrown);
+                    }
+                });  //글수정 ajax
+            });     //수정 버튼 클릭  ----------------------------------------------------
+
+            //input 태그의 name 이 item 의 값이 바뀌면(change) 작동되는 이벤트 핸들러 작성
+            $('input[name=item]').on('change', function(){
+                //여러 개의 태그 중에서 체크표시가 된 태그를 선택
+                $('input[name=item]').each(function(index){
+                    //선택된 radio 순번대로 하나씩 checked 인지 확인함
+                    if($(this).is(':checked')){
+                        //체크 표시된 아이템에 대한 폼이 보여지게 처리함
+                        $('div.sfield').eq(index).css('display', 'block');
+                    }else{
+                        //체크 표시 안된 아이템의 폼은 안 보이게 처리함
+                        $('div.sfield').eq(index).css('display', 'none');
+                    }
+                });  //each
+            });  //on
+        });  //document.ready
+
+        // **************************************************************************************
+        //목록에서 제목 클릭시 페이지 오른쪽에 클릭한 글의 상세보기가 출력되게 함
+        function fn_detail(noticeNo){
+            //alert(bnum);
+            $.ajax({
+                url: "/notices/ndetail/" + noticeNo,
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json; charset=UTF-8",
+                success: function(data){
+                    console.log("success : " + data);
+
+                    $('#no').val(data.noticeNo);
+                    $('#ntitle').val(data.noticeTitle);
+                    $('#nwriter').val(data.noticeWriter);
+                    $('#ncontent').val(data.noticeContent);
+                    $('#rcount').val(data.readCount);
+                    $('#ndate').val(data.naticeDate);
+                    $('#nfile').val(data.originalFilePath);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    console.log("error : " + jqXHR + ", " + textStatus + ", " + errorThrown);
+                }
+            });  //ajax
+        }  //detailCall() 함수
+
+        //목록보기 버튼을 클릭했을 때 동작 함수 ***********************************************************
+        function fn_list(currentPage){
+            //게시글 조회 출력 처리
+            $.ajax({
+                url: "/notices/list",
+                type: "GET",
+                data: { page:  currentPage, limit: 10 },
+                dataType: "json",
+                contentType: "application/json; charset=UTF-8",
+                success: function(data){
+                    console.log("success : " + data);   // [Object, object]
+
+                    //object --> string
+                    var str = JSON.stringify(data);
+                    console.log(str)
+
+                    //string --> json
+                    var json = JSON.parse(str);
+                    console.log(json)   //Array(10)
+
+                    values = "";
+                    for(var i in json) {
+                        if (json[i].originalFilePath != null && json[i].originalFilePath.length > 0) {
+                            values += "<tr><td>" + json[i].noticeNo
+                                + "</td><td><a href='#'  onclick='fn_detail(" + json[i].noticeNo + ");' >"
+                                + json[i].noticeTitle
+                                +  "<img src='/images/file_clip.png' width='15' height='15'></a></td><td>"
+                                + json[i].noticeWriter + "</td><td>"
+                                + json[i].noticeDate + "</td><td>"
+                                + json[i].readCount + "</td></tr>";
+                        }else{
+                            values += "<tr><td>" + json[i].noticeNo
+                                + "</td><td><a href='#'  onclick='fn_detail(" + json[i].noticeNo + ");' >"
+                                + json[i].noticeTitle
+                                +  "</a></td><td>"
+                                + json[i].noticeWriter + "</td><td>"
+                                + json[i].noticeDate + "</td><td>"
+                                + json[i].readCount + "</td></tr>";
+                        }
+                    }  //for
+
+                    $('#pagelist').html($('#pagelist').html() + values);
+                    //$('#toplist').append(values);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    console.log("error : " + jqXHR + ", " + textStatus + ", " + errorThrown);
+                }
+            });  //ajax
+
+        }
+    </script>
+</head>
+<body>
+<h1>notice service page : jpa 세번째 방법</h1>
+<hr>
+<!-- 최근 등록 공지글 3개 출력 : ajax -->
+<div style="float:left;border:1px solid navy;padding:5px;margin:5px;margin-left:50px;">
+    <h4>신규 공지글</h4>
+    <table id="toplist" border="1" cellspacing="0" width="350">
+        <tr><th>번호</th><th>제목</th><th>날짜</th></tr>
+    </table>
+</div>
+<!-- 상세보기 출력용 -->
+<div id="inputarea">
+    <table>
+        <tr>
+            <td><label for="no">번호</label></td>
+            <td><input type="text" name="noticeNo" id="no" value=""></td>
+        </tr>
+        <tr>
+            <td><label for="ntitle">제목</label></td>
+            <td><input type="text" name="noticeTitle" id="ntitle" value=""></td>
+        </tr>
+        <tr>
+            <td><label for="nwriter">작성자</label></td>
+            <td><input type="text" name="noticeWriter" id="nwriter" value=""></td>
+        </tr>
+        <tr>
+            <td><label for="ncontent">내용</label></td>
+            <td><textarea name="noticeContent" id="ncontent" cols="50" rows="5"></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="rcount">조회수</label></td>
+            <td><input type="text" name="readCount" id="rcount"></td>
+        </tr>
+        <tr>
+            <td><label for="ndate">등록날짜</label></td>
+            <td><input type="date" name="noticeDate" id="ndate" readonly></td>
+        </tr>
+        <tr>
+            <td><label for="nfile">첨부파일</label></td>
+            <td><input type="text" name="originalFilePath" id="nfile"><br>
+                <input type="file" name="upfile" id="upfile"></td>
+        </tr>
+    </table>
+    <hr>
+    <button id="registerBtn">등록</button> &nbsp;
+    <button id="modifyBtn">수정</button> &nbsp;
+    <button id="deleteBtn">삭제</button> &nbsp;
+    <button id="resetBtn">내용지우기</button>
+</div>
+<hr style="clear: both">
+<div id="listarea" style="align:center">
+    <div style="align:center;margin-left: 500px;">
+        <button onclick="fn_list(1);" >목록보기</button>
+    </div>
+    <div id="searcharea" style="align:center">
+        <!-- 항목별 검색 기능 추가 -->
+        <fieldset id="ss">
+            <legend>검색할 항목을 선택하세요.</legend>
+            <input type="radio" name="item" id="title"> 제목 &nbsp;
+            <input type="radio" name="item" id="writer"> 작성자 &nbsp;
+            <input type="radio" name="item" id="date"> 등록날짜 &nbsp;
+        </fieldset>
+        <br>
+        <!-- 검색 항목별 값 입력 전송용 양식 만들기 -->
+        <!-- 제목 검색  -->
+        <div id="titlediv" class="sfield">
+            <fieldset>
+                <legend>검색할 제목을 입력하세요.</legend>
+                <input type="search" id="tkeyword"> &nbsp;
+                <input type="button" value="검색" onclick="fn_searchTitle(1);">
+            </fieldset>
+        </div>
+
+        <!-- 내용 검색  -->
+        <div id="contentdiv" class="sfield">
+            <fieldset>
+                <legend>검색할 내용을 입력하세요.</legend>
+                <input type="search" id="wkeyword"> &nbsp;
+                <input type="button" value="검색" onclick="fn_searchWriter(1);">
+            </fieldset>
+        </div>
+
+        <!-- 등록날짜 검색 폼 -->
+        <div id="datediv" class="sfield">
+            <fieldset>
+                <legend>검색할 등록날짜를 선택하세요.</legend>
+                <input type="date" id="begin"> ~ <input type="date" id="end"> &nbsp;
+                <input type="button" value="검색" onclick="fn_searchDate(1);">
+            </fieldset>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        function fn_searchTitle(page){
+            $.ajax({
+                url: "/notices/title",
+                type: 'GET',
+                data: {
+                    keyword : $('#tkeyword').val(),
+                    page : page,
+                    limit : 10
+                },
+                dataType: 'json',
+                contentType: 'application/json; charset=UTF-8',
+                success: function(data){
+                    console.log("success : " + data);   // [Object, object]
+
+                    //object --> string
+                    var str = JSON.stringify(data);
+                    console.log(str)
+
+                    //string --> json
+                    var json = JSON.parse(str);
+                    console.log(json)
+
+                    values = "<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회수</th></tr>";
+                    for(var i in json) {
+                        if (json[i].originalFilePath != null && json[i].originalFilePath.length > 0) {
+                            values += "<tr><td>" + json[i].noticeNo
+                                + "</td><td><a href='#'  onclick='fn_detail(" + json[i].noticeNo + ");' >"
+                                + json[i].noticeTitle
+                                +  "<img src='/images/file_clip.png' width='15' height='15'></a></td><td>"
+                                + json[i].noticeWriter + "</td><td>"
+                                + json[i].noticeDate + "</td><td>"
+                                + json[i].readCount + "</td></tr>";
+                        }else{
+                            values += "<tr><td>" + json[i].noticeNo
+                                + "</td><td><a href='#'  onclick='fn_detail(" + json[i].noticeNo + ");' >"
+                                + json[i].noticeTitle   +  "</a></td><td>"
+                                + json[i].noticeWriter + "</td><td>"
+                                + json[i].noticeDate + "</td><td>"
+                                + json[i].readCount + "</td></tr>";
+                        }
+                    }  //for
+
+                    $('#pagelist').html(values);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    console.log("error : " + jqXHR + ", " + textStatus + ", " + errorThrown);
+                }
+            });
+        }
+
+        function fn_searchWriter(page){
+            $.ajax({
+                url: '/notices/content',
+                type: 'GET',
+                data: {
+                    keyword : $('#wkeyword').val(),
+                    page : page,
+                    limit : 10
+                },
+                dataType: 'json',
+                contentType: 'application/json; charset=UTF-8',
+                success: function(data){
+                    console.log("success : " + data);   // [Object, object]
+
+                    //object --> string
+                    var str = JSON.stringify(data);
+                    console.log(str)
+
+                    //string --> json
+                    var json = JSON.parse(str);
+                    console.log(json)
+
+                    values = "<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회수</th></tr>";
+                    for(var i in json) {
+                        if (json[i].boardOriginalFileName != null && json[i].boardOriginalFileName.length > 0) {
+                            values += "<tr><td>" + json[i].boardNum
+                                + "</td><td><a href='#'  onclick='fn_detail(" + json[i].noticeNo + ");' >"
+                                + json[i].noticeTitle
+                                +  "<img src='/images/file_clip.png' width='15' height='15'></a></td><td>"
+                                + json[i].noticeWriter + "</td><td>"
+                                + json[i].noticeDate + "</td><td>"
+                                + json[i].readCount + "</td></tr>";
+                        }else{
+                            values += "<tr><td>" + json[i].boardNum
+                                + "</td><td><a href='#'  onclick='fn_detail(" + json[i].noticeNo + ");' >"
+                                + json[i].noticeTitle
+                                +  "</a></td><td>"
+                                + json[i].noticeWriter + "</td><td>"
+                                + json[i].noticeDate + "</td><td>"
+                                + json[i].readCount + "</td></tr>";
+                        }
+                    }  //for
+
+                    $('#pagelist').html(values);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    console.log("error : " + jqXHR + ", " + textStatus + ", " + errorThrown);
+                }
+            });
+        }
+
+        function fn_searchDate(page){
+            $.ajax({
+                url:  '/boards/date',
+                type: 'GET',
+                data: {
+                    begin : $('#begin').val(),
+                    end : $('#end').val(),
+                    page : page,
+                    limit : 10},
+                dataType: 'json',
+                contentType: 'application/json; charset=UTF-8',
+                success: function(data){
+                    console.log("success : " + data);   // [Object, object]
+
+                    //object --> string
+                    var str = JSON.stringify(data);
+                    console.log(str)
+
+                    //string --> json
+                    var json = JSON.parse(str);
+                    console.log(json)
+
+                    values = "<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회수</th></tr>";
+                    for(var i in json) {
+                        if (json[i].boardOriginalFileName != null && json[i].boardOriginalFileName.length > 0) {
+                            values += "<tr><td>" + json[i].noticeNo
+                                + "</td><td><a href='#'  onclick='fn_detail(" + json[i].noticeNo + ");' >"
+                                + json[i].noticeTitle
+                                +  "<img src='/images/file_clip.png' width='15' height='15'></a></td><td>"
+                                + json[i].noticeWriter + "</td><td>"
+                                + json[i].noticeDate + "</td><td>"
+                                + json[i].readCount + "</td></tr>";
+                        }else{
+                            values += "<tr><td>" + json[i].noticeNo
+                                + "</td><td><a href='#'  onclick='fn_detail(" + json[i].noticeNo + ");' >"
+                                + json[i].noticeTitle
+                                +  "</a></td><td>"
+                                + json[i].noticeWriter + "</td><td>"
+                                + json[i].noticeDate + "</td><td>"
+                                + json[i].readCount + "</td></tr>";
+                        }
+                    }  //for
+
+                    $('#pagelist').html(values);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    console.log("error : " + jqXHR + ", " + textStatus + ", " + errorThrown);
+                }
+            });
+        }
+    </script>
+    <!--   *********************************************************************************    -->
+    <table id="pagelist" width="550" align="center" border="1" cellspacing="0">
+        <tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회수</th></tr>
+    </table>
+    <hr>
+    <div id="pagearea" style="align:center;margin-left: 500px;">
+        <button id="1" class="page">처음</button>
+        <button id="prev" class="page">이전그룹</button>
+        <span class="page" id="1">1</span> &nbsp; <span class="page" id="2">2</span>
+        <button id="next" class="page">다음그룹</button>
+        <button id="2" class="page">마지막</button>
+    </div>
+</div>
+</body>
+</html>

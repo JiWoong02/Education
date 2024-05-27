@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>sample5</title>
+<style type="text/css">
+/* style 태그 안, css 파일 안에서 사용할 수 있는 주석기호임
+	스타일시트에서는 이 주석 기호만 사용할 수 있음*/
+</style>
+<script type="text/javascript">
+//한줄 주석 기호 사용할 수 있음
+/* 여러 줄 주석 기호도 사용할 수 있음 */
+
+//전역변수(Global Variable) : 함수 블럭 {} 밖에서 선언된 변수
+//자바스크립트는 브라우저에서 한 페이지를 표현하는 html 파일을 하나의 window 객체로 취급함
+//이 파일 안에서 만들어지는 전역변수는 자동으로 window 객체의 멤버변수가 됨
+var name = '홍길동';
+//전역변수는 var 없이 변수 선언해도 됨
+age = 29;
+//변수 선언 위치 아래쪽에서 변수 사용할 수 있음
+
+function testFn(){
+	//window.alert('이름 : ' + name + '\n나이 : ' + age);
+	window.alert('이름 : ' + window.name + '\n나이 : ' + window.age);
+	
+	//지역변수 (Local Variable)
+	//함수 안, 제어문, 안에서 선언된 변수
+	//선언된 블럭(구역) 안에서만 사용할 수 있는 변수
+	//반드시 var 을 앞에 사용해야 함
+	//함수 안에서 var 없이 변수 선언하면 자동 전역변수가 됨
+	var email = 'admin@test.org';			//지역변수
+	address = '서울시 서초구 서초대로 77';			//전역변수
+	
+	document.getElementById('area').innerHTML = '이름 : ' + name + '<br> 나이 : ' + age
+					+ '<br>이메일 : ' + email + '<br>주소 : ' + window.address;
+	//다른 함수 실행
+	testFn2();
+}
+
+function testFn2(){
+	document.getElementById('area2').innerHTML = '이름 : ' + name + '<br> 나이 : ' + age
+	/* + '<br>이메일 : ' + email */ + '<br>주소 : ' + address;
+}
+
+//전역변수 생성시 window객체의 멤버변수가 됨 , window 생략가능
+
+//onload 이벤트 : 웹 서버에서 이 문서를 브라우저로 전송을 완료하면 에 대한 이벤트임
+//							브라우저 페이지 코드 읽어들이기를 완료하면을 의미함
+//							html 태그에 사용한다면 body 태그에만 사용함
+//							자바스크립트 코드로 onload 이벤트를 작동시키려면, window 객체만 작동시킬 수 있음
+//내장객체명.on이벤트 = 실행시킬함수명;
+/* window.onload = testFn;	 */	// 함수이름만 사용함, 함수명 뒤에 () 표기 안 함
+</script>
+
+</head>
+<!-- <body onload="testFn();"> -->
+<body>
+<h1>주석문, 변수, 자료형 테스트 페이지</h1>
+<!-- html 주석 태그임 : 브라우저 페이지에서는 안 보임 
+		브라우저에서 페이지 소스 보기로는 볼 수 있음-->
+<div id="area" style="width:300px ; height:100px; border: 1px solid blue;"></div>
+<hr>
+<div id="area2" style="width:300px; height:100px; border: 1px solid red;"></div>
+<hr>
+<h3>문자열과 숫자의 + 연산</h3>
+<p>
+문자열 + 숫자 => 문자열
+숫자 + 숫자 + 문자열 => 숫자 두 개가 먼저 계산되고, 그 결과값과 문자열이 합쳐짐
+</p>
+<script type="text/javascript">
+	document.write('apple' + 20 + 30);	//apple2030
+	document.write('<br>');
+	document.write(20 + 30 + 'banana');  // 50banana
+</script>
+<hr>
+
+<h3>자바스크립트에서 문자열 다루기 : string 내장객체의 메소드 사용</h3>
+<script type="text/javascript">
+	var str = 'javascript';
+	
+	document.write('str : ' + str + '<br>')
+
+</script>
+	
+
+</body>
+</html>

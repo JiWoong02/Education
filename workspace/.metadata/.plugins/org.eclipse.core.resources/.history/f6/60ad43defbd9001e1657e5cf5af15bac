@@ -1,0 +1,32 @@
+package test;
+
+public class main{
+    public static void main(String[] args) {
+        A b = new B();
+        b.paint();		//BDCD
+        b.draw();		//D
+    }
+}
+ 
+class A {
+    public void paint() {
+        System.out.print("A");
+        draw();
+    }
+    public void draw() {
+        System.out.print("B");
+        draw();
+    }
+}
+ 
+class B extends A {
+    public void paint() {
+        super.draw();			//BD
+        System.out.print("C");
+        this.draw();		//
+    }
+    
+    public void draw() {
+        System.out.print("D");
+    }
+}

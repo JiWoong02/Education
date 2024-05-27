@@ -1,0 +1,12 @@
+package test.url;
+
+import java.net.URL;
+
+public class TestURL {
+
+	public static void main(String[] args) {
+		//https://n.news.naver.com/mnews/article/015/0004951769
+		URL  url = new URL("https://n.news.naver.com/mnews/article/015/0004951769");
+	}
+
+}

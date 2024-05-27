@@ -1,0 +1,11 @@
+package test.thread1;
+
+//public class MyThread2 extends Thread {
+public class MyThread2 extends Jframe implements Runnable{
+	@Override
+	public void run() {
+		for(int k = 1; k <=500; k++) {
+			System.out.println(k);
+		}
+	}
+}

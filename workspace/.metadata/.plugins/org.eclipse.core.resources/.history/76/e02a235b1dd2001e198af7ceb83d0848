@@ -1,0 +1,20 @@
+package test.synch;
+
+public class AccountManager extends Thread {
+	private Account acc;
+	private String name; // 인출방법 이름 (통장, 카드 등)
+
+	public AccountManager() {
+
+	}
+
+	public AccountManager(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public void run() {	//스레드 start() 시 자동 run()이 구동됨
+		acc = new Account();
+		acc.setBalance(1000);
+	}
+}

@@ -1,0 +1,10 @@
+package test.generics;
+
+public class TestGenerics3 {
+
+	public static void main(String[] args) {
+		// List 계열에서 Generics 사용 활용 : 
+
+	}
+
+}

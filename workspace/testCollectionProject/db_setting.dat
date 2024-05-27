@@ -1,0 +1,6 @@
+#jdbc oracle connection setting
+#Mon Jan 29 16:26:05 KST 2024
+driver=oracle.jdbc.driver.OracleDriver
+passwd=student
+user=student
+url=jdbc;oracle;thin;@127.0.0.1\:1521\:xe

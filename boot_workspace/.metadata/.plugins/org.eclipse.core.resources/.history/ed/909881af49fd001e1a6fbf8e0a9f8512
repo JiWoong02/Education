@@ -1,0 +1,16 @@
+package com.boot.test.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TestController {
+	//@RequestMapping("/")
+	//@ResponseBody
+	// 두 개를 합쳐놓은 restAPI 방식
+	public String welcome() {
+		return "Welcome! Spring Boot Project with JSP";
+	}
+
+}

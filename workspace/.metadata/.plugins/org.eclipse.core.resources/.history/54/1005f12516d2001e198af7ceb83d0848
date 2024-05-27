@@ -1,0 +1,8 @@
+package test.thread1;
+
+public class MyThread1 extends Thread {
+	
+	
+	@Override
+	public void run() {}
+}

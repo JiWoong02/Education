@@ -1,0 +1,11 @@
+package test.url;
+
+public class TestURL2 {
+
+	public static void main(String[] args) {
+		// 키보드로 URL 을 입력받아, 프로토콜, 포트번호, 호스트명, 파일경로, 쿼리스트링 출력 처리함
+		// 단, URL 은 한 줄씩 입력받고, URL 앞뒤에 안보이는 공백 제거함
+
+	}
+
+}

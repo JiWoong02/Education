@@ -1,0 +1,13 @@
+package test.generics;
+
+import java.util.Map;
+
+public class TestGenerics6 {
+
+	public static void main(String[] args) {
+		Map<String, Book> map;
+		map = mapAllocation();  // 맵 객체 생성(메모리 할당) 해서 레퍼런스 리턴
+
+	}
+	public static Map<String,Book> mapAllocation(){}
+}

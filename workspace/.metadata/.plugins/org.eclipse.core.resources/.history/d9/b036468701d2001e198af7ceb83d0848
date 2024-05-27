@@ -1,0 +1,29 @@
+package mini.chatting;
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class TCPClientChatting {
+
+	public static void main(String[] args) {
+		// 클라이언트용 프로그램
+		Scanner sc = new Scanner(System.in);
+		String serverIP = null;
+		BufferedReader br = null;
+		PrintWriter pw = null;
+		
+		try {
+			System.out.println("접속할 서버 ip 주소 입력 : ");
+			serverIP = sc.next();
+			
+			//소켓 객체 생성과 동시에 연결
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+		}
+
+	}
+
+}

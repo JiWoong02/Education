@@ -1,0 +1,10 @@
+package test.synch;
+
+public class TestSyncronized {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src='/testq/resources/js/jquery-3.7.1.min.js'></script>
+<script>
+	$(function(){
+		$('h1').css('color','red');
+		$('#text').css('color','orange');
+		$('h1[name=text]').css('color','yellow');
+		$('h1.text').css('color','olive');
+	});
+</script>
+</head>
+<body>
+	<h1>text1</h1>
+	<h1 id='text'>text2</h1>
+	<h1 name='text'>text3</h1>
+	<h1 class='text'>text4</h1>
+</body>
+</html>

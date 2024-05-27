@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;select&apos; in &apos;logic.home.view.Menu.mainMenu()&apos; to &apos;no&apos;&#x0D;&#x0A;- Original project: &apos;LogicHomework2&apos;&#x0D;&#x0A;- Original element: &apos;logic.home.view.Menu.mainMenu().select&apos;&#x0D;&#x0A;- Renamed element: &apos;select&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;select&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;logic.home.view{Menu.java[Menu~mainMenu@select!1163!1188!1167!1172!I!0!false" name="no" references="true" stamp="1704423558111" version="1.0"/>
+</session>

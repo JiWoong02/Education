@@ -1,0 +1,19 @@
+package test.generics;
+
+public class TestMyGenerics {
+
+	public static void main(String[] args) {
+		// MyGenerics<T> 사용 테스트
+		MyGenerics<String> my1 = new MyGenerics<String>(5);
+		
+		try {
+			my1.add("java");
+			my1.add("linux");
+			my1.add("oracle");
+		} catch (SizeOverflowException e) {
+			// TODO: handle exception
+		}
+
+	}
+
+}

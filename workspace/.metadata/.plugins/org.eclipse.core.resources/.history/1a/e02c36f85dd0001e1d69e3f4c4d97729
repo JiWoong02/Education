@@ -1,0 +1,19 @@
+package test.generics;
+
+import java.util.ArrayList;
+
+public class TestGenerics3 {
+
+	public static void main(String[] args) {
+		// List 계열에서 Generics 사용 활용
+		ArrayList<Book> bookList = new ArrayList<Book>();
+
+	}
+	
+	//리스트 저장 객체 초기화 처리
+	public static void listInit(ArrayList<Book> list) {
+		list.add(new Book());
+		
+	}
+
+}

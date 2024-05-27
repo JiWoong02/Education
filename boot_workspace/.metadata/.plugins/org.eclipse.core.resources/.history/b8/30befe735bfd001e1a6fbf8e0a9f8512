@@ -1,0 +1,6 @@
+package mappers;
+
+@Mapper
+public interface TestMapper {
+
+}

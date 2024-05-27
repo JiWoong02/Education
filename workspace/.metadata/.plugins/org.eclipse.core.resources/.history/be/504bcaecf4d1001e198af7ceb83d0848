@@ -1,0 +1,21 @@
+package test.tcp.server;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+//TCP 통신용 서버측 프로그램
+public class TCPServer {
+
+	public static void main(String[] args) throws IOException {
+		// 1. port 번호 지정
+		// 가능하면 2000번 이후 값으로, 이전 값은 이미 정해진것들이 있음
+		int port = 5000;
+		//은행의 창구번호 같은 느낌
+		
+		//2. 서버용 소켓 객체 생성
+		ServerSocket server = new ServerSocket(port);
+		
+
+	}
+
+}

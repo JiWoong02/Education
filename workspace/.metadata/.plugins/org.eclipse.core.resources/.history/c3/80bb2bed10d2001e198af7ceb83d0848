@@ -1,0 +1,28 @@
+package test.udp.client;
+
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.SocketException;
+
+public class UDPClient {
+
+	public static void main(String[] args) throws Exception {
+		// UDP 통신을 사용한 클라이언트측 프로그램 : 일방적으로 메세지를 받음
+		byte[] receiveMessage = new byte[1024];
+		
+		DatagramSocket client = new DatagramSocket(5555);
+		//DatagramSocket(int port)
+		
+		DatagramPacket packet = new DatagramPacket(receiveMessage, 1024);
+		//DatagramPacket(byte[] buf, int length)
+		//Constructs a DatagramPacket for receiving packets of length length.
+		
+		client.receive(packet);
+		
+		
+		
+		
+		
+	}
+
+}

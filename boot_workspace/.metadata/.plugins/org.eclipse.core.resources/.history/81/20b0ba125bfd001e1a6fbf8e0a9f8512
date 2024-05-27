@@ -1,0 +1,8 @@
+package com.boot.test.dto;
+
+public class Board {
+	private int boardNum;
+	private String boardWriter;
+	private String boardTitle;
+	private String boardContent;
+}

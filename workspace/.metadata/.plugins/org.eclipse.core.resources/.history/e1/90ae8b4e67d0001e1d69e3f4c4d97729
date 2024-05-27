@@ -1,0 +1,12 @@
+package test.generics;
+
+import java.util.Map;
+
+public class TestGenerics6 {
+
+	public static void main(String[] args) {
+		Map<String, Book> map;
+
+	}
+
+}

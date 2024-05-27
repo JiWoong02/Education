@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>sample9</title>
+<script type="text/javascript">
+	window.onload = function(){
+		//body 영역에서 마우스 버튼 눌렀을 때 작동되는 이벤트
+/* 		document.body.onmousedown = function(){
+			console.log('body 에서 마우스 버튼 누름');
+		}; */
+		
+		//이벤트 핸들러 콜백함수에는 발생한 이벤트 정보를 다루는 event 매개변수를 사용할 수 있음
+		document.body.onmousemove = function(event){
+			console.log(event.x +", " + event.y);
+		};
+		
+		
+	};
+</script>
+</head>
+<body>
+<h1>자바스크립트에서 객체(json) 다루기</h1>
+
+
+</body>
+</html>

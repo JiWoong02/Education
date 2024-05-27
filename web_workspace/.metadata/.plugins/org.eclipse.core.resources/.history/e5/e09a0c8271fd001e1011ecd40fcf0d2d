@@ -1,0 +1,6 @@
+package testJCG;
+
+public class MakeA {
+	static a = 3;
+	
+}

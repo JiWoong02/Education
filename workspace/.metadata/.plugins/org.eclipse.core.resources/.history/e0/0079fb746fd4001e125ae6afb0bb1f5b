@@ -1,0 +1,33 @@
+package dice;
+
+public class Dice {
+
+	public static void main(String[] args) {
+		int[][] q = new int[][] {{1, 2, 3, 4, 5, 6}, {3, 3, 3, 3, 4, 4}, {1, 3, 3, 4, 4, 4}, {1, 1, 4, 4, 5, 5}};
+		Solution solution = new Solution();
+		int[] ans = solution.solution(q);
+		for(int i=0; i < ans.length;i++) {
+			System.out.println(ans[i]);
+		}
+
+	}
+
+}
+
+class Solution {
+	public int[] solution(int[][] dice) {
+		// A가 가져가는 주사위 수 = dice.length/2;
+		int[] sum = new int[dice.length];
+		for (int i = 0; i < dice.length; i++) {
+			int s = 0;
+			for (int j = 0; i < dice[i].length; j++) {
+				s += dice[i][j];
+				System.out.println(s);
+			}
+			sum[i] = s;
+		}
+		
+		int[] answer = {};
+		return sum;
+	}
+}

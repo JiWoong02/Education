@@ -1,0 +1,27 @@
+package test.inet;
+
+import java.net.InetAddress;
+import java.util.Scanner;
+
+public class TestInetAddress2 {
+
+	public static void main(String[] args) {
+		// 키보드로 호스트명을 입력받아서, 해당 호스트가 가진 ip 주소 모드를 출력 처리
+		// => 반복 실행 : "none" 입력시 종료
+		Scanner sc = new Scanner(System.in);
+		do {
+			System.out.print("호스트 명을 입력해주세요 : (none 입력시 종료됨) ");
+			String host = sc.next();
+			if (host.equals("none")) {
+				break;
+			}
+			
+			for(InetAddress inet : InetAddress.getAllByName(host)) {
+				System.out.println(inet);
+			}
+			System.out.println();
+
+		} while (true);
+	}
+
+}

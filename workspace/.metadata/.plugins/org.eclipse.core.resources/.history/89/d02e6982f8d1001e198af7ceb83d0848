@@ -1,0 +1,26 @@
+package test.tcp.client;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+
+//TCP 통신을 사용하는 클라이언트측 프로그램
+public class TCPClient {
+
+	public static void main(String[] args) throws IOException {
+		// 1. 서버의 포트번호와 ip 주소 필요
+		int port = 5000;
+		String serverIP = InetAddress.getLocalHost().getHostAddress();
+		//String serverIP = "연결할 상대 pc 의 ip 주소";
+		
+		// 2. 클라이언트용 소켓 객체 생성 => 바로 서버와 연결됨
+		Socket socket = new Socket(serverIP, port);
+		// 연결 실패는 null 리턴됨
+		
+		if(socket!=null) {}
+		
+		
+		
+	}
+
+}

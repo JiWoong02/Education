@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>sample5</title>
+<style type="text/css">
+/* style 태그 안, css 파일 안에서 사용할 수 있는 주석기호임*/
+</style></head>
+<body>
+<h1>주석문, 변수, 자료형 테스트 페이지</h1>
+<!-- html 주석 태그임 : 브라우저 페이지에서는 안 보임 
+		브라우저에서 페이지 소스 보기로는 볼 수 있음
+-->
+
+
+
+
+
+
+
+</body>
+</html>

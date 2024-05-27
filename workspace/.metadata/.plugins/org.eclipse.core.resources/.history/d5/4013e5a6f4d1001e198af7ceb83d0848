@@ -1,0 +1,14 @@
+package test.tcp.server;
+
+
+
+//TCP 통신용 서버측 프로그램
+public class TCPServer {
+
+	public static void main(String[] args) {
+		// 1. port 번호 지정
+		//
+
+	}
+
+}

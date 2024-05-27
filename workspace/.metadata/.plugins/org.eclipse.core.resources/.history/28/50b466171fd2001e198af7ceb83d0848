@@ -1,0 +1,38 @@
+package test.synch;
+
+public class Account {
+	private static int balance; // 통장 잔액
+
+	public Account() {
+	}
+
+	// 예금 인출하는 메소드 : 통장 잔액 차감 처리
+	// 여러 스래드가 같이 사용하는 메소드에 동기화 처리
+	public void withDraw(int money) {
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		// 임계영역 : 여러 스래드가 같이 이용하는 코드 부분
+		if (balance >= money) {
+			this.balance -= money;
+		}
+	}
+
+	public static int getBalance() {
+		return balance;
+	}
+
+	public static void setBalance(int balance) {
+		Account.balance = balance;
+	}
+	
+	
+	
+	
+	
+}

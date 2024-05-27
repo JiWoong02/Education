@@ -1,0 +1,17 @@
+package testParent;
+
+public class Parent {
+	int x=100;
+	Parent(){
+		this(500);
+		System.out.println("parentConstructer No Argument : " + x);
+	}
+	Parent(int x){
+		this.x=x;
+		System.out.println("parentConstructer");
+	}
+	
+	int getX() {
+		return x;
+	}
+}

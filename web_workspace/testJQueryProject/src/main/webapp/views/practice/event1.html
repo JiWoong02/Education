@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습 Practice</title>
+<script type= "text/javascript" src="/testq/resources/js/jquery-3.7.1.min.js"></script>
+<script>
+	$(function(){
+		var len = $('#number').children().length; //number id를 가진애의 자식갯수
+		console.log('length : ' + len);
+		$(document).on('mouseenter', '#number', function(){
+			$(this).children().each(function(){
+				console.log($(this).attr('class'));
+			})
+		})
+	}); //마우스가 number 아이디를 가진 객체에 들어오면 그 객체 각각의 자식들의 클래스를 콘솔에 출력
+</script>
+
+</head>
+<body>
+	<ul id='number'>
+		<li class='n1'>1</li>
+		<li class='n2'>2</li>
+		<li class='n3'>3</li>
+	</ul>
+</body>
+</html>

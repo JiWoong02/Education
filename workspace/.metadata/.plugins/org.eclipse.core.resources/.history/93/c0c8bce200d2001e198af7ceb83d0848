@@ -1,0 +1,10 @@
+package mini.chatting;
+
+public class TCPClientChatting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

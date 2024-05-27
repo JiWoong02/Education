@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>sample7</title>
+</head>
+<body>
+<h1>자바스크립트에서 함수 다루기</h1>
+<h2>function 함수명([매개변수명]){ 구문작성 }</h2>
+<button onclick="test1()">실행확인</button>
+<p></p>
+<script type="text/javascript">
+	
+</script>
+
+</body>
+</html>

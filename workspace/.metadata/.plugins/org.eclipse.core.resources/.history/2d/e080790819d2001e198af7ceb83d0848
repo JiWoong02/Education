@@ -1,0 +1,21 @@
+package test.thread1;
+
+public class TestThread {
+
+	public static void main(String[] args) {
+		// multi thread test
+		// Thread 를 상속받은 경우
+//		MyThread1 t1 = new MyThread1();
+//		MyThread2 t2 = new MyThread2();
+		
+		//Runnable 을 상속받은 경우
+//		Runnable r1 = new MyThread1();
+//		Runnable r2 = new MyThread2();
+//		Thread th1 = new Thread(r1);
+//		Thread th2 = new Thread(r2);
+		Thread th1 = new Thread(new MyThread1())
+		th1.start();
+		th2.start();
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.boot.test.dto;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
+public class Board{
+	private int boardNum;
+	private String boardWriter;
+	private String boardTitle;
+	private String boardContent;
+}

@@ -1,0 +1,15 @@
+package test.thread1;
+
+public class TestThread {
+
+	public static void main(String[] args) {
+		// multi thread test
+		MyThread1 t1 = new MyThread1();
+		MyThread2 t2 = new MyThread2();
+		
+		t1.run();
+		t2.run();
+		
+	}
+
+}

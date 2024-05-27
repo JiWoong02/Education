@@ -1,0 +1,15 @@
+package test.tcp.server;
+
+
+
+//TCP 통신용 서버측 프로그램
+public class TCPServer {
+
+	public static void main(String[] args) {
+		// 1. port 번호 지정
+		// 가능하면 2000번 이후 값으로, 이전 값은 이미 정해진것들이 있음
+		int port = 5000;
+
+	}
+
+}

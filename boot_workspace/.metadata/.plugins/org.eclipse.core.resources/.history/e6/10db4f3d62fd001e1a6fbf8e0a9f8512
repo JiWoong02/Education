@@ -1,0 +1,12 @@
+package com.boot.test.dto;
+
+import lombok.Getter;
+
+@Getter
+public class Board implements java.io.Serializable{
+	private static final long serialVersionUID = -3836342197901545898L;
+	private int boardNum;
+	private String boardWriter;
+	private String boardTitle;
+	private String boardContent;
+}

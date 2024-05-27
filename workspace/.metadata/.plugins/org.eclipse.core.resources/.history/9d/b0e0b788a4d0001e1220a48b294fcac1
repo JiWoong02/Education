@@ -1,0 +1,33 @@
+package test;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		Book book = new Book();
+		book = null;
+		Book book2 = new Book (null, null);
+		System.out.println(book);
+		System.out.println(book2);
+	}
+
+}
+
+class Book {
+	private String title;
+	private String author;
+	
+	public Book() {
+		super();
+	}
+
+	public Book(String title, String author) {
+		super();
+		this.title = title;
+		this.author = author;
+	}
+	
+}

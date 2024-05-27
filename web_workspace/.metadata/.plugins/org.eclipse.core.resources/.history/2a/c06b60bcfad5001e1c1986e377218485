@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>sample6</title>
+</head>
+<body>
+<h1>자바스크립트에서 배열 다루기</h1>
+<p>
+	<script type="text/javascript">
+		var arr1 = new Array(5);
+		var arr2 = new Array('red', 'yellow', 'green');
+		var arr3 = new Array();	//자료구조 stack 구조가 됨
+		//stack 은 LIFO(Last Input First Output) 구조임
+		//stack 은 입력을 push, 출력 : pop 이라고 함
+		
+		//arr1 이 참조하는 배열 공간의 값을 기록
+		for(var i=0;i<arr1.length; i++){
+			arr1[i] = (i + 1) * 100;
+			//arr3이 참조하는 배열 공간에도 같은 값 기록함
+			arr3.push();
+		}
+		
+		
+		
+	</script>
+</p>
+
+
+
+</body>
+</html>

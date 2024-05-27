@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event1 실습</title>
+<script type= "text/javascript" src="/testq/resources/js/jquery-3.7.1.min.js"></script>
+<script>
+//옵션이 선택되면 해당 옵션의    text 표시
+$(function(){
+	$('select').on('change', function(){
+	$('#selNum').text($('option:selected').text());
+	});
+});
+
+</script>
+
+</head>
+<body>
+	<select name='number'>
+		<option value=''>== 선택 ==</option>
+		<option value='1'>1번</option>
+		<option value='2'>2번</option>
+		<option value='3'>3번</option>
+		<option value='4'>4번</option>
+	</select>
+	<span id='selNum'></span>
+</body>
+</html>

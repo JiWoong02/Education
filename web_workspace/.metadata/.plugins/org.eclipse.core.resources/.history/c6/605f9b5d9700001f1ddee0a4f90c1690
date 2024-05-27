@@ -1,0 +1,15 @@
+package testParent;
+
+public class Parent {
+	int y=100;
+	Parent(){
+		this(500);
+	}
+	Parent(int x){
+		this.y=x;
+	}
+	
+	int getX() {
+		return y;
+	}
+}

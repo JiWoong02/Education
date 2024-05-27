@@ -1,0 +1,6 @@
+package org.myweb.second;
+
+@Controller
+public class StartController {
+
+}

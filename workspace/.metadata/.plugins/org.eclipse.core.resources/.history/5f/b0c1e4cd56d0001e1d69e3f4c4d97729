@@ -1,0 +1,15 @@
+package test.generics;
+
+import java.util.ArrayList;
+
+public class TestGenerics2 {
+
+	public static void main(String[] args) {
+		// 제네릭스(Generics) 기능 : 
+		// 사용시 클래스 타입을 정하면서 이용하는 기능임
+		// 
+		ArrayList<String> list = new ArrayList<String>(); 
+
+	}
+
+}

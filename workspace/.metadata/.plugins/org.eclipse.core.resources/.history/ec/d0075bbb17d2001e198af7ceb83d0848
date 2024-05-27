@@ -1,0 +1,11 @@
+package test.thread1;
+
+public class MyThread2 extends Thread {
+
+	@Override
+	public void run() {
+		for(int k = 1; k <=500; k++) {
+			System.out.println(k);
+		}
+	}
+}

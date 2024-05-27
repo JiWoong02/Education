@@ -1,0 +1,12 @@
+package test.generics;
+
+public class testGenerics4 {
+
+	public static void main(String[] args) {
+		// Set 계열에 Generics 적용
+		Set<Book> set = new HashSet(Book)();
+		
+
+	}
+
+}

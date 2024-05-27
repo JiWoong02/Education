@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>sample8</title>
+</head>
+<body>
+<h1 id ="h1">자바스크립트에서 이벤트 다루기</h1>
+
+<h2>실습 1 : select 에서 색이름을 선택하면, body의 배경색이 변경되게 함</h2>
+배경색 선택 :
+<select>
+	<option>흰색
+	<option>노란색
+	<option>핑크색
+	<option>흰색
+	<option>흰색
+	
+</select>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+package test.udp.client;
+
+public class UDPClient {
+
+	public static void main(String[] args) {
+		// UDP 통신을 사용한 클라이언트측 프로그램 : 일방적으로 메세지를 받음
+		byte[] receiveMessage = new byte[1024];
+
+	}
+
+}

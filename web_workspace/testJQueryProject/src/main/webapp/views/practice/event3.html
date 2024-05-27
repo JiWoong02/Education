@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event2 실습</title>
+<script type= "text/javascript" src="/testq/resources/js/jquery-3.7.1.min.js"></script>
+<script>
+$(function(){
+	$('tr').on('click',function(){//tr태그에 click 이벤트가 일어나면 함수작동
+		if(!$(this).is($('tr').eq(0))){	//만약 클릭 대상이 tr태그의 0번째 줄이 아니라면
+			$(this).children().each(function(index,item){//tr태그의 자식들에 각각의 함수를 적용하겠다
+				$('#s' + (index + 1)).text($(this).text());//아이디 's(td태그 인덱스 +1)'에 td값을 넣는걸 반복
+			});
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<table border='1'>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>조회수</th>
+			<th>작성일자</th>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>3번제목</td>
+			<td>0</td>
+			<td>11-07-13</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>2번제목</td>
+			<td>0</td>
+			<td>11-07-12</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>1번제목</td>
+			<td>0</td>
+			<td>11-07-11</td>
+		</tr>
+	</table>
+	선택된 행 : <span id='s1'></span> / <span id='s2'></span> / <span id='s3'></span> / <span id= 's4'></span>
+</body>
+</html>

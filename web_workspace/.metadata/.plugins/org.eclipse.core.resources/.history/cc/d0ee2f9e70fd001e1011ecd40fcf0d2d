@@ -1,0 +1,14 @@
+package testJCG;
+
+public class TestJCG {
+	public static void main(String[] args) {
+		addA(); //4
+		addA(); //4
+	}
+	
+	public static void addA() {
+		a = a+1;
+		System.out.println(a+"\n");
+	}
+
+}

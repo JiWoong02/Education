@@ -1,0 +1,13 @@
+package test.thread1;
+
+//클래스가 하나의 스래드가 되려면, java.lang Thread 상속받으면 됨
+public class MyThread1 extends Thread {
+
+	
+	
+	
+	
+	@Override
+	public void run() {
+	}
+}

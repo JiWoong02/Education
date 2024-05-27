@@ -1,0 +1,6 @@
+package test.synch;
+
+public class AccountManager {
+	private Account acc;
+	private String name;	//인출방법 이름
+}

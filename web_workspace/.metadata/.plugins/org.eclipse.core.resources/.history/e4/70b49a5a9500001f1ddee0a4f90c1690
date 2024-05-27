@@ -1,0 +1,15 @@
+package testParent;
+
+public class Child extends Parent{
+	int x= 4000;
+	Child(){
+		this(800);
+	}
+	Child(int x){
+		super(x);
+		this.x=x;
+	}
+	int getX() {
+		return x;
+	}
+}

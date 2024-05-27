@@ -1,0 +1,31 @@
+package test.url;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Scanner;
+
+public class TestURL2 {
+
+	public static void main(String[] args) {
+		// 키보드로 URL 을 입력받아, 프로토콜, 포트번호, 호스트명, 파일경로, 쿼리스트링 출력 처리함
+		// 단, URL 은 한 줄씩 입력받고, URL 앞뒤에 안보이는 공백 제거함
+		// url 의 호스트명으로 ip 주소 조회 출력 => 반복 실행 : none 입력시 종료 처리함
+		// 키보드 입력은 BufferedReader 사용
+		Scanner sc = new Scanner(System.in);
+		do {
+			System.out.print("URL을 입력해주세요 : ");
+			String urls = sc.next().trim();
+			
+			try {
+				URL url = new URL(urls);
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		} while (true);
+
+	}
+
+}

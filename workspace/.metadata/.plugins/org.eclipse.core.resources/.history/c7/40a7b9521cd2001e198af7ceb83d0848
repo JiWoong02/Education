@@ -1,0 +1,5 @@
+package test.synch;
+
+public class Account {
+	private static int balance; //통장 잔액
+}

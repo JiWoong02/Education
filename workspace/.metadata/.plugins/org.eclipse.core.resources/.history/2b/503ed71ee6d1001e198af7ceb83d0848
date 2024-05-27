@@ -1,0 +1,10 @@
+package test.inet;
+
+public class TestInetAddress {
+
+	public static void main(String[] args) {
+		// java.net.InetAddress
+
+	}
+
+}

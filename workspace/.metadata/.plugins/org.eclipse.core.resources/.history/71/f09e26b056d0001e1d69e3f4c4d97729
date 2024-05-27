@@ -1,0 +1,13 @@
+package test.generics;
+
+import java.util.ArrayList;
+
+public class TestGenerics2 {
+
+	public static void main(String[] args) {
+		// 제네릭스(Generics) 기능 : 
+		ArrayList<String> list = new ArrayList<String>(); 
+
+	}
+
+}

@@ -1,0 +1,24 @@
+package test.generics;
+
+public class TestMyGenerics {
+
+	public static void main(String[] args) {
+		// MyGenerics<T> 사용 테스트
+		// String[] 을 취급하는 MyGenerics
+		MyGenerics<String> my1 = new MyGenerics<String>(5);
+		
+		try {
+			my1.add("java");
+			my1.add("linux");
+			my1.add("oracle");
+			
+			for(int i =0; i<my1.getCount(); i++) {
+				System.out.println(my1.get(i));
+			}
+		} catch (SizeOverflowException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

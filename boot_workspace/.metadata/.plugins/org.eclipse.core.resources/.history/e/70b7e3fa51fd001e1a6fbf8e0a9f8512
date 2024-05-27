@@ -1,0 +1,22 @@
+package com.boot.test.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+@RestController
+public class TestController {
+	//@RequestMapping("/")
+	//@ResponseBody
+	// 두 개를 합쳐놓은 restAPI 방식
+	@GetMapping("/test")
+	public String welcome() {
+		return "Welcome! Spring Boot Project with JSP";
+	}
+	
+	@GetMapping("/home")
+	public ModelAndView home(ModelAndView mv) {
+		mv.setViewName("home");
+		return mv;
+	}
+}

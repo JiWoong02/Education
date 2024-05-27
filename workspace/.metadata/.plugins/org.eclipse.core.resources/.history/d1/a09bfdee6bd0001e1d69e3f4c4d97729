@@ -1,0 +1,22 @@
+package test.generics;
+
+public class MyGenerics<T> {
+		//배열 처리용 클래스 : 타입이 정해지지 않은 배열 선언
+		private T[] array;	//사용시 타입을 정함
+		private int size;
+		private int count; // 객체 생성 시 자동으로 0으로 초기화됨
+		
+		public MyGenerics(int size) {
+			this.size = size;
+			array = (T[])new Object[size];
+		}
+		
+		public void add(T obj) {
+			if(count < size) {
+				array[count] = obj;
+				count++;
+			}
+			else {}
+		}
+		
+}

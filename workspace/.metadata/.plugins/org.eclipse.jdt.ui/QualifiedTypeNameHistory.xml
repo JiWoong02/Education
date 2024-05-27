@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="test.second.Car"/>
+    <fullyQualifiedTypeName name="logic.home.view.Menu"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="array.premitive.ArraySample"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.nio.file.spi.FileSystemProvider"/>
+    <fullyQualifiedTypeName name="array.sample.ArraySample"/>
+    <fullyQualifiedTypeName name="two.array.TwoArraySample"/>
+    <fullyQualifiedTypeName name="oop.method.sample.MethodSample"/>
+    <fullyQualifiedTypeName name="array3.model.BookManager"/>
+    <fullyQualifiedTypeName name="inheritance.sample.Shape"/>
+    <fullyQualifiedTypeName name="com.practice1.model.vo.Book"/>
+    <fullyQualifiedTypeName name="com.practice2.model.entitiy.Rectangle"/>
+    <fullyQualifiedTypeName name="com.practice2.model.entitiy.Point"/>
+    <fullyQualifiedTypeName name="hello.HhP"/>
+    <fullyQualifiedTypeName name="inherit.model.dto.Student"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="inherit.polymorphism.model.Rectangle"/>
+    <fullyQualifiedTypeName name="ncs.test2.ListTest"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="test.TestScanner"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="test.map.FMap.FEntry"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="practice3.BookManagerMap"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="java.net.URL"/>
+    <fullyQualifiedTypeName name="java.net.InetAddress"/>
+    <fullyQualifiedTypeName name="dice.Solution"/>
+</qualifiedTypeNameHistroy>

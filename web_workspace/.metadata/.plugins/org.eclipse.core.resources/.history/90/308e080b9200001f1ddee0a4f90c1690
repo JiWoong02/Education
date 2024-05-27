@@ -1,0 +1,5 @@
+package testParent;
+
+public class Child {
+
+}

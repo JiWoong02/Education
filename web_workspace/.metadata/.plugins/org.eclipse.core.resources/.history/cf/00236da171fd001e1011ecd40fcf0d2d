@@ -1,0 +1,7 @@
+package testJCG;
+
+public class MakeA {
+	static int a = 3;
+	public void addA() {
+	}
+}

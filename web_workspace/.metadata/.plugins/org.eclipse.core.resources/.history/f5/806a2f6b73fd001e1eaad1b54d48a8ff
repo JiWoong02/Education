@@ -1,0 +1,13 @@
+package testJCG;
+
+public class TestJCG {
+	public static void main(String[] args) {
+		MakeA a = new MakeA();
+		MakeA b = new MakeA();
+		MakeA c = new MakeA();
+		a.addA();
+		b.addA();
+		c.addA();
+	}
+
+}

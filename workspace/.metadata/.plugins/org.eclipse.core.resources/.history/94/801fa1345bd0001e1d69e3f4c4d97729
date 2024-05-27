@@ -1,0 +1,16 @@
+package test.generics;
+
+import java.util.ArrayList;
+
+public class TestGenerics2 {
+
+	public static void main(String[] args) {
+		// 제네릭스(Generics) 기능 : 
+		// 사용시 클래스 타입을 정하면서 이용하는 기능임
+		// 클래스명<영문자> 또는 인터페이스명<영문자> 표시된 클래스들이 
+		// 제네릭스 기능을 사용할 수 있다는 표시임 
+		// 클래스 사용시 한가지 타입의 클래스 객체만 취급하겠다는 용도로 사용함
+		
+	}
+
+}

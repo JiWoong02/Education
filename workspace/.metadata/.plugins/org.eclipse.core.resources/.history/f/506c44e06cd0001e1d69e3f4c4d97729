@@ -1,0 +1,11 @@
+package test.generics;
+
+public class TestMyGenerics {
+
+	public static void main(String[] args) {
+		// MyGenerics<T> 사용 테스트
+		MyGenerics<String> my1 = new MyGenerics<String>(5);
+
+	}
+
+}

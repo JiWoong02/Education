@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>sample6</title>
+</head>
+<body>
+<h1>자바스크립트에서 배열 다루기</h1>
+<p>
+	<script type="text/javascript">
+		var arr1 = new Array(5);
+		var arr2 = new Array('red', 'yellow', 'green');
+		var arr3 = new Array();	//자료구조 stack 구조가 됨
+		//stack 은 LIFO(Last Input First Output)
+	</script>
+</p>
+
+
+
+</body>
+</html>
