@@ -1,0 +1,22 @@
+2024-05-31 11:44:46,976 INFO    MainThread:14124 [wandb_setup.py:_flush():76] Current SDK version is 0.17.0
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_setup.py:_flush():76] Configure stats pid to 14124
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_setup.py:_flush():76] Loading settings from C:\Users\ict01-4\.config\wandb\settings
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_setup.py:_flush():76] Loading settings from D:\Education\python_workspace\e_dqn_test\wandb\settings
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'python_workspace\\e_dqn_test\\d_dqn_train.py', 'program_abspath': 'D:\\Education\\python_workspace\\e_dqn_test\\d_dqn_train.py', 'program': 'D:\\Education\\python_workspace\\e_dqn_test\\d_dqn_train.py'}
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_init.py:_log_setup():520] Logging user logs to D:\Education\python_workspace\e_dqn_test\wandb\run-20240531_114446-5qxdyf7b\logs\debug.log
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_init.py:_log_setup():521] Logging internal logs to D:\Education\python_workspace\e_dqn_test\wandb\run-20240531_114446-5qxdyf7b\logs\debug-internal.log
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_init.py:init():560] calling init triggers
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_init.py:init():567] wandb.init called with sweep_config: {}
+config: {'env_name': 'LunarLander-v2', 'max_num_episodes': 1500, 'batch_size': 32, 'learning_rate': 0.0005, 'gamma': 0.99, 'steps_between_train': 1, 'target_sync_step_interval': 500, 'replay_buffer_size': 300000, 'epsilon_start': 0.95, 'epsilon_end': 0.01, 'epsilon_final_scheduled_percent': 0.75, 'print_episode_interval': 10, 'train_num_episodes_before_next_test': 50, 'validation_num_episodes': 3, 'episode_reward_avg_solved': 200}
+2024-05-31 11:44:46,977 INFO    MainThread:14124 [wandb_init.py:init():605] wandb.init() called when a run is still active
+2024-05-31 11:57:35,707 INFO    MainThread:14124 [wandb_run.py:_finish():2103] finishing run jiwoonghan/e_dqn_test/i9tok6o1
+2024-05-31 11:57:35,707 INFO    MainThread:14124 [wandb_run.py:_atexit_cleanup():2343] got exitcode: 0
+2024-05-31 11:57:35,707 INFO    MainThread:14124 [wandb_run.py:_restore():2326] restore
+2024-05-31 11:57:35,707 INFO    MainThread:14124 [wandb_run.py:_restore():2332] restore done
+2024-05-31 11:57:44,613 INFO    MainThread:14124 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-05-31 11:57:44,613 INFO    MainThread:14124 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-05-31 11:57:44,617 INFO    MainThread:14124 [wandb_run.py:_footer_sync_info():3953] logging synced files

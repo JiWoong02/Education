@@ -1,0 +1,1 @@
+{"[VALIDATION] Mean Episode Reward (3 Episodes)": 231.83449475977636, "[TRAIN] Episode Reward": 248.20647865214363, "[TRAIN] Loss": 3.6057121753692627, "[TRAIN] Epsilon": 0.28155555555555556, "[TRAIN] Replay buffer": 208761, "Training Episode": 800, "Training Steps": 208729, "_timestamp": 1717124255.7068784, "_runtime": 769.483900308609, "_step": 799, "_wandb": {"runtime": 768}}

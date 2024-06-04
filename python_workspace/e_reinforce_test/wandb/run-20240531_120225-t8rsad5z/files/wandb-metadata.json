@@ -1,0 +1,45 @@
+{
+    "os": "Windows-11-10.0.22631-SP0",
+    "python": "3.12.3",
+    "heartbeatAt": "2024-05-31T03:02:26.146774",
+    "startedAt": "2024-05-31T03:02:25.561429",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "D:\\Education\\python_workspace\\e_reinforce_test\\d_reinforce_train.py",
+    "codePathLocal": "d_reinforce_train.py",
+    "codePath": "python_workspace\\e_reinforce_test\\d_reinforce_train.py",
+    "git": {
+        "remote": "https://github.com/JiWoong02/Education.git",
+        "commit": "e5f7aeb123cdfcabc929fc8578fab129f5efd0ac"
+    },
+    "email": "smkr96@naver.com",
+    "root": "D:/Education",
+    "host": "ict01-04",
+    "username": "ict01-4",
+    "executable": "D:\\Education\\python_workspace\\e_reinforce_test\\.venv\\Scripts\\python.exe",
+    "cpu_count": 12,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 2100.0,
+        "min": 0.0,
+        "max": 2100.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2100.0,
+            "min": 0.0,
+            "max": 2100.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 931.5107383728027,
+            "used": 35.90863800048828
+        }
+    },
+    "memory": {
+        "total": 15.721595764160156
+    }
+}
